@@ -1,15 +1,15 @@
+
 class Solution {
     public int distributeCandies(int[] candyType) {
         int total = candyType.length;
-        int caneat = total / 2;
+        int canEat = total / 2;
 
-        HashSet<Integer> dif = new HashSet<>();
+        HashSet<Integer> distinct = new HashSet<>();
 
-        for(int cand : candyType) {
-            dif.add(cand);
+        for (int candy : candyType) {
+            distinct.add(candy);
         }
 
-        if(dif.size() <= caneat) return dif.size();
-        return caneat;
+        return Math.min(distinct.size(), canEat);
     }
 }
